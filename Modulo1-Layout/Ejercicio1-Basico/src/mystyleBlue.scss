@@ -1,0 +1,45 @@
+$base-color: blue;
+$base-color-text: white;
+
+body{
+    font-family: 'Courier New', Courier, monospace
+}
+
+header{
+    margin: 10px;
+    font: {
+        weight: bold;
+        size: 30px;
+        }
+}
+
+.container-1{
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+
+    .box {
+        margin: 10px;
+        padding: 5px;
+        border-radius: 4px;
+        background-color: $base-color;
+        color: $base-color-text;
+    
+        .color-box-text{
+            display: grid;
+            height: 70px;
+            align-content: center;
+            justify-content: center;
+        }
+    }
+    
+    @for $i from 1 through  4 {
+        .darken-#{$i} {
+            background-color: darken($base-color, 6% * $i);
+            color: darken($base-color-text, 15% * $i);
+        }
+        .lighten-#{$i} {
+            background-color: lighten($base-color, 6% * $i);
+            color: darken($base-color-text, 15% * $i);
+        }
+    }
+}
