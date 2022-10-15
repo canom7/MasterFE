@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css?family=Handlee");
+
+.base{
+    background-color: red;
+}
+
+.important{
+    background-color:maroon ;
+}
+
+.warning{
+    background-color: lightcoral;
+}
+
+.principal{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.secundary{
+    font-family: Handlee;
+    font-weight: bold;
+}
+
+#shadow{
+    box-shadow: -15px 12px 10px 3px rgb(109, 107, 107);
+}
