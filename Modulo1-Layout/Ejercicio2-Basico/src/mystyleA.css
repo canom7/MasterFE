@@ -1,14 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Handlee");
 
-.base{
+.container div:first-child{
     background-color: red;
 }
 
-.important{
+.container div:nth-child(2){
     background-color:maroon ;
 }
 
-.warning{
+.container div:nth-child(3){
     background-color: lightcoral;
 }
 
@@ -21,6 +21,6 @@
     font-weight: bold;
 }
 
-#shadow{
+.container div:last-child{
     box-shadow: -15px 12px 10px 3px rgb(109, 107, 107);
 }

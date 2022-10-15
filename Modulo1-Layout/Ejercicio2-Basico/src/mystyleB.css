@@ -2,20 +2,19 @@
     border-radius: 5%;
 }
 
-
-.base{
+.container div:first-child{
     background-color: blue;
 }
 
-.important{
+.container div:nth-child(2){
     background-color:midnightblue ;
 }
 
-.warning{
+.container div:nth-child(3){
     background-color:aqua;
 }
 
 
-#shadow{
+.container div:last-child{
     box-shadow: 15px 12px 10px 3px rgb(109, 107, 107);
 }
