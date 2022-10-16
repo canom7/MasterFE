@@ -1,0 +1,170 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.page-container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 100px 1fr 60px;
+  grid-template-areas:
+    "header header"
+    "menu body"
+    "footer footer";
+}
+
+header {
+  grid-area: header;
+  background: #cede1c;
+
+  .toolbar{
+    display: flex;
+    background: white;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .page-title{
+    display: flex;
+    font-size: 25px;
+    color: white;
+    flex-grow: 1;
+    margin: 12px;
+  }
+}
+
+nav {
+  background: #393e06;
+  grid-area: menu;
+
+  .menu-container{
+    height: 250px;
+    position: sticky;
+    top: 15px;
+    
+    .menu-title{
+      display: flex;
+      font-size: 20px;
+      color: white;
+      font-weight: bold;
+      justify-content: center;
+      margin: 20px;
+    }
+  }
+}
+
+.menu-list{
+  background-color: #f9fbe3;
+  height: 20px;
+  border:solid 0.2px #393e06;
+  padding: 10px;
+}
+
+main {
+  background: #f1f1f1;
+  grid-area: body;
+
+  .list{
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    align-content: center;
+    margin: 50px;
+    gap: 60px;
+
+    .card{
+      border: solid 1px black;
+      height: 200px;
+      border-radius: 5px;
+      background-color: white;
+
+      .image{
+        display: grid;
+        height: 75%;
+        justify-content: center;
+        align-content: center;
+
+        img{
+          border-radius: 100%;
+        }
+      }
+
+      .member-name{
+        height: 25%;
+        display: grid;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+footer {
+  background: #f9fbe3;
+  grid-area: footer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  
+}
+
+@media screen and (max-width: 768px) {
+  .page-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px 60px 1fr 60px;
+    grid-template-areas:
+      "header"
+      "menu"
+      "body"
+      "footer";
+  }
+
+  header > .toolbar{
+    display: none;
+  }
+
+  nav{
+    position: sticky;
+    top: 0px;
+  }
+
+  nav > .menu-container > .menu-title{
+    display: none;
+  }
+  
+  .menu-container{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+  }  
+  
+  .menu-list{
+    width: 110px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  main .list{
+      grid-template-columns: repeat(1, minmax(270px, 1fr));
+      margin: 15px;
+      gap: 8px;
+  }
+
+  main > .list > .card{
+    border: none;
+    border-radius: 0px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  main > .list > .card > .image{
+      margin: 25px;
+  }
+
+  main > .list > .card >  .member-name{
+      margin: 25px;
+      align-items: center;
+  }
+}
