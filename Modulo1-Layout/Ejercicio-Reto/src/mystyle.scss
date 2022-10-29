@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css?family=Jost");
+
+body{
+    background-color: #141414;
+    color: white;
+    font-family: Jost;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 110px 1fr 20px;
+    grid-template-areas:
+      "header"
+      "body"
+      "footer";
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0px;
+    background-color: #141414;
+    grid-area: header;
+
+    div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 15px;
+        font-size: 15px;
+
+        img{
+            height: 100px;
+        }
+    }
+
+    .platform-title{
+        font-size: 20px;
+    }
+
+    .header-buttons{
+        div{
+            width: 75px;
+        }
+
+        :hover{
+            display: flex;
+            height: 50px;
+            width: 75px;
+            background-color: white;
+            color: blue;
+            border-radius: 8px;
+        }  
+    }
+}
+
+main {
+  grid-area: body;
+    
+  .section-title-noTop{
+    height: 40px;
+    display: flex;
+    align-items:center;
+  }
+  
+  .top{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around; 
+
+    .top-item {
+      flex-grow: 1;
+      min-width: 225px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .first, .second{
+    display: flex;
+    flex-wrap: wrap;
+
+    .item {
+      flex:1;
+      min-width: 250px;
+
+      img{
+        width: 100%;
+      }
+    }
+  }  
+}
+
+footer{
+    background-color: #141414;
+    grid-area: footer;
+}
+ 
+
+@media screen and (min-width:1281px) {
+  #top-text::after {
+      content: "5";
+      font-size: 25px;
+      font-weight: bold;
+  }
+
+  .item:hover{
+    transform: scale(1.1);
+    transition: transform .2s;
+  }
+}
+
+@media screen and (max-width:1280px) {
+  .platform-title {
+    display: none;
+  }
+
+  #top-text::after {
+      content: "3";
+      font-size: 25px;
+      font-weight: bold;
+  }
+
+  .top div:nth-child(-n+2) {
+      display: none;
+  }
+}
+
+@media screen and (max-width:690px) {
+  .top {
+      flex-direction: column-reverse !important;
+  }   
+
+  body{
+    height: fit-content;
+  }
+}
+
+
