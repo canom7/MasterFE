@@ -1,0 +1,24 @@
+$background-color: rgb(233, 221, 119);
+$background-color-react: rgb(241, 184, 239);
+
+h1 {
+  padding: 20px;
+  background-color: rgb(172, 211, 226);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.title-container {
+  background-color: $background-color;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  padding: 10px;
+}
+
+#title-container-react {
+  background-color: $background-color-react;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 10px;
+}
+
+img {
+  width: 200px;
+}
