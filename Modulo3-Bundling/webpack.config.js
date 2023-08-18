@@ -1,8 +1,10 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require("path");
 
 module.exports = {
-  entry: { app: "./src/index.js" },
+  context: path.resolve(__dirname, "./src"),
+  entry: { app: "./index.js" },
   output: {
     filename: "[name].[chunkhash].js",
     clean: true,
@@ -15,16 +17,20 @@ module.exports = {
         loader: "babel-loader",
       },
       {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
+      },
+      {
         test: /\.scss$/,
         exclude: /node_modules/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       filename: "index.html",
-      template: "./src/index.html",
+      template: "./index.html",
       scriptLoading: "blocking",
     }),
     new MiniCssExtractPlugin({
