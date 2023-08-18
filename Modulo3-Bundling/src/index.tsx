@@ -9,3 +9,6 @@ document.getElementById("imgContainer").appendChild(img);
 
 const root = createRoot(document.getElementById("root"));
 root.render(<div id="title-container-react">Hello World from React!!</div>);
+
+const varToPrint: string = "Hello Webpack!!";
+console.log(varToPrint);

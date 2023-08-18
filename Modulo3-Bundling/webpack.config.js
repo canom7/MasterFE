@@ -5,9 +5,9 @@ const path = require("path");
 module.exports = {
   context: path.resolve(__dirname, "./src"),
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: [".js", ".ts", ".tsx"],
   },
-  entry: { app: "./index.jsx" },
+  entry: { app: "./index.tsx" },
   output: {
     filename: "[name].[chunkhash].js",
     clean: true,
@@ -15,7 +15,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
         loader: "babel-loader",
       },
@@ -45,5 +45,6 @@ module.exports = {
       chunkFilename: "[id].css",
     }),
   ],
+  devtool: "eval-source-map",
   devServer: { port: 8080 },
 };
