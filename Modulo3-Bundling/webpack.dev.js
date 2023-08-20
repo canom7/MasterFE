@@ -1,5 +1,6 @@
 const common = require("./webpack.common.js");
 const { merge } = require("webpack-merge");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = merge(common, {
   mode: "development",
@@ -16,6 +17,11 @@ module.exports = merge(common, {
       },
     ],
   },
+  plugins: [
+    new Dotenv({
+      path: "./dev.env",
+    }),
+  ],
   devtool: "eval-source-map",
   devServer: { port: 8080 },
 });

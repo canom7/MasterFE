@@ -12,3 +12,5 @@ root.render(<div id="title-container-react">Hello World from React!!</div>);
 
 const varToPrint: string = "Hello Webpack!!";
 console.log(varToPrint);
+
+console.log(`Api base: ${process.env.API_BASE}`);
