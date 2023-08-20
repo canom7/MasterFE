@@ -4,6 +4,10 @@ const { merge } = require("webpack-merge");
 
 module.exports = merge(common, {
   mode: "production",
+  output: {
+    filename: "js/[name].[chunkhash].js",
+    assetModuleFilename: "assets/[hash][ext][query]",
+  },
   module: {
     rules: [
       {
@@ -19,7 +23,7 @@ module.exports = merge(common, {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "[name].[chunkhash].css",
+      filename: "css/[name].[chunkhash].css",
       chunkFilename: "[id].css",
     }),
   ],
