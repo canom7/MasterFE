@@ -1,0 +1,33 @@
+{
+  "name": "modulo3-bundling-v2",
+  "version": "1.0.0",
+  "description": "",
+  "browserslist": [
+    "defaults"
+  ],
+  "source": "./src/index.html",
+  "scripts": {
+    "start": "run-p -l type-check:watch start:dev",
+    "start:dev": "rimraf dist && parcel",
+    "build": "rimraf dist && parcel build",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.9.3",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.9.3",
+    "process": "^0.11.10",
+    "rimraf": "^5.0.1",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@types/react": "^18.2.20",
+    "@types/react-dom": "^18.2.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
